@@ -5,6 +5,13 @@
 </div> 
 <br>
 
+<div align="center">
+简体中文
+&emsp;&emsp; | &emsp;&emsp;
+<a href="https://github.com/huihut/interview/blob/master/README_en.md">English</a>
+</div> 
+<br>
+
 <b><details><summary>💡 关于</summary></b>
 
 📚 本仓库是面向 C/C++ 技术方向校招求职者、初学者的基础知识总结，包括语言、程序库、数据结构、算法、系统、网络、链接装载库等知识及面试经验、招聘、内推等信息。
@@ -13,35 +20,36 @@
 
 📄 保存为 PDF 方式：使用 Chrome 浏览器打开 <a href="https://interview.huihut.com">📚 Docsify 文档</a> 页面，缩起左侧目录-右键 - 打印 - 选择目标打印机是另存为PDF - 保存（[打印预览.png](https://raw.githubusercontent.com/huihut/interview/master/images/打印预览.png)）
 
-🙏 仓库内容如有错误或改进欢迎 issue 或 pr，建议或讨论可在 [#12](https://github.com/huihut/interview/issues/12) 提出。由于本人水平有限，仓库中的知识点有来自本人原创、读书笔记、书籍、博文等，非原创均已标明出处，如有遗漏，请 issue 提出。本仓库遵循 [CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享）](LICENSE) 协议，转载请注明出处，不得用于商业目的。
+🙏 仓库内容如有错误或改进欢迎 issue 或 pr，建议或讨论可在 [#12](https://github.com/huihut/interview/issues/12) 提出。由于本人水平有限，仓库中的知识点有来自本人原创、读书笔记、书籍、博文等，非原创均已标明出处，如有遗漏，请 issue 提出。本仓库遵循 [CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享）](https://github.com/huihut/interview/blob/master/LICENSE) 协议，转载请注明出处，不得用于商业目的。
 
 </details>
 
-🍭 广告与打赏：个人茶余饭后独立开发的一个虚拟形象扮演软件 **《[Avalive](https://store.steampowered.com/app/1137770/Avalive/)》**。打赏请点 [支持赞助](#-支持赞助)。
-
 ## 📑 目录
 
-* [➕ C/C++](#-cc)
-* [⭐️ Effective](#️-effective)
-* [📦 STL](#-stl)
-* [〽️ 数据结构](#️-数据结构)
-* [⚡️ 算法](#️-算法)
-* [❓ Problems](#-problems)
-* [💻 操作系统](#-操作系统)
-* [☁️ 计算机网络](#️-计算机网络)
-* [🌩 网络编程](#-网络编程)
-* [💾 数据库](#-数据库)
-* [📏 设计模式](#-设计模式)
-* [⚙️ 链接装载库](#️-链接装载库)
-* [📚 书籍](#-书籍)
-* [🔱 C/C++ 发展方向](#-cc-发展方向)
-* [💯 复习刷题网站](#-复习刷题网站)
-* [📝 面试题目经验](#-面试题目经验)
-* [📆 招聘时间岗位](#-招聘时间岗位)
-* [👍 内推](#-内推)
-* [👬 贡献者](#-贡献者)
-* [🍭 支持赞助](#-支持赞助)
-* [📜 License](#-license)
+* [➕ C/C++](#cc)
+* [⭐️ Effective](#effective)
+* [📦 STL](#stl)
+* [〽️ 数据结构](#data-structure)
+* [⚡️ 算法](#algorithm)
+* [❓ Problems](#problems)
+* [💻 操作系统](#os)
+* [☁️ 计算机网络](#computer-network)
+* [🌩 网络编程](#network-programming)
+* [💾 数据库](#database)
+* [📏 设计模式](#design-pattern)
+* [⚙️ 链接装载库](#link-loading-library)
+* [📚 书籍](#books)
+* [🔱 C/C++ 发展方向](#cc-development-direction)
+* [💯 复习刷题网站](#review-of-brush-questions-website)
+* [📝 面试题目经验](#interview-questions-experience)
+* [📆 招聘时间岗位](#recruitment-time-post)
+* [👍 内推](#recommend)
+* [👬 贡献者](#contributor)
+* [🍭 支持赞助](#support-sponsor)
+* [📜 License](#license)
+
+
+<a id="cc"></a>
 
 ## ➕ C/C++
 
@@ -50,9 +58,20 @@
 #### 作用
 
 1. 修饰变量，说明该变量不可以被改变；
-2. 修饰指针，分为指向常量的指针和指针常量；
-3. 常量引用，经常用于形参类型，即避免了拷贝，又避免了函数对值的修改；
+2. 修饰指针，分为指向常量的指针（pointer to const）和自身是常量的指针（常量指针，const pointer）；
+3. 修饰引用，指向常量的引用（reference to const），用于形参类型，即避免了拷贝，又避免了函数对值的修改；
 4. 修饰成员函数，说明该成员函数内不能修改成员变量。
+
+#### const 的指针与引用
+
+* 指针
+    * 指向常量的指针（pointer to const）
+    * 自身是常量的指针（常量指针，const pointer）
+* 引用
+    * 指向常量的引用（reference to const）
+    * 没有 const reference，因为引用本身就是 const pointer
+
+> （为了方便记忆可以想成）被 const 修饰（在 const 后面）的值不可改变，如下文使用例子中的 `p2`、`p3`
 
 #### 使用
 
@@ -80,21 +99,21 @@ void function()
     // 对象
     A b;                        // 普通对象，可以调用全部成员函数、更新常成员变量
     const A a;                  // 常对象，只能调用常成员函数
-    const A *p = &a;            // 常指针
-    const A &q = a;             // 常引用
+    const A *p = &a;            // 指针变量，指向常对象
+    const A &q = a;             // 指向常对象的引用
 
     // 指针
     char greeting[] = "Hello";
     char* p1 = greeting;                // 指针变量，指向字符数组变量
-    const char* p2 = greeting;          // 指针变量，指向字符数组常量
-    char* const p3 = greeting;          // 常指针，指向字符数组变量
-    const char* const p4 = greeting;    // 常指针，指向字符数组常量
+    const char* p2 = greeting;          // 指针变量，指向字符数组常量（const 后面是 char，说明指向的字符（char）不可改变）
+    char* const p3 = greeting;          // 自身是常量的指针，指向字符数组变量（const 后面是 p3，说明 p3 指针自身不可改变）
+    const char* const p4 = greeting;    // 自身是常量的指针，指向字符数组常量
 }
 
 // 函数
 void function1(const int Var);           // 传递过来的参数在函数内不可变
 void function2(const char* Var);         // 参数指针所指内容为常量
-void function3(char* const Var);         // 参数指针为常指针
+void function3(char* const Var);         // 参数指针为常量
 void function4(const int& Var);          // 引用参数在函数内为常量
 
 // 函数返回值
@@ -582,22 +601,28 @@ cout << x << endl;
 :: 使用
 
 ```cpp
-int count = 0;        // 全局（::）的 count
+int count = 11;         // 全局（::）的 count
 
 class A {
 public:
-    static int count; // 类 A 的 count（A::count）
+	static int count;   // 类 A 的 count（A::count）
 };
+int A::count = 21;
+
+void fun()
+{
+	int count = 31;     // 初始化局部的 count 为 31
+	count = 32;         // 设置局部的 count 的值为 32
+}
 
 int main() {
-    ::count = 1;      // 设置全局的 count 的值为 1
+	::count = 12;       // 测试 1：设置全局的 count 的值为 12
 
-    A::count = 2;     // 设置类 A 的 count 为 2
+	A::count = 22;      // 测试 2：设置类 A 的 count 为 22
 
-    int count = 0;    // 局部的 count
-    count = 3;        // 设置局部的 count 的值为 3
+	fun();		        // 测试 3
 
-    return 0;
+	return 0;
 }
 ```
 
@@ -1125,6 +1150,9 @@ catch (bad_cast b) {
 typeid、type_info 使用
 
 ```cpp
+#include <iostream>
+using namespace std;
+
 class Flyable                       // 能飞的
 {
 public:
@@ -1137,12 +1165,13 @@ public:
     void foraging() {...}           // 觅食
     virtual void takeoff() {...}
     virtual void land() {...}
+    virtual ~Bird(){}
 };
 class Plane : public Flyable        // 飞机
 {
 public:
     void carry() {...}              // 运输
-    virtual void take off() {...}
+    virtual void takeoff() {...}
     virtual void land() {...}
 };
 
@@ -1158,7 +1187,7 @@ private:
     ...
 };
 
-class doSomething(Flyable *obj)                 // 做些事情
+void doSomething(Flyable *obj)                 // 做些事情
 {
     obj->takeoff();
 
@@ -1171,9 +1200,18 @@ class doSomething(Flyable *obj)                 // 做些事情
     }
 
     obj->land();
-};
+}
+
+int main(){
+	Bird *b = new Bird();
+	doSomething(b);
+	delete b;
+	b = nullptr;
+	return 0;
+}
 ```
 
+<a id="effective"></a>
 
 ## ⭐️ Effective
 
@@ -1266,6 +1304,8 @@ class doSomething(Flyable *obj)                 // 做些事情
 * [Bjarne Stroustrup 的常见问题](http://www.stroustrup.com/bs_faq.html)
 * [Bjarne Stroustrup 的 C++ 风格和技巧常见问题](http://www.stroustrup.com/bs_faq2.html)
 
+<a id="stl"></a>
+
 ## 📦 STL
 
 ### STL 索引
@@ -1299,6 +1339,9 @@ class doSomething(Flyable *obj)                 // 做些事情
 ---|---|---|---
 [find](http://www.cplusplus.com/reference/algorithm/find/)|顺序查找|O(n)|可重复
 [sort](https://github.com/gcc-mirror/gcc/blob/master/libstdc++-v3/include/bits/stl_algo.h#L4808)|[内省排序](https://en.wikipedia.org/wiki/Introsort)|O(n*log<sub>2</sub>n)|可重复
+
+
+<a id="data-structure"></a>
 
 ## 〽️ 数据结构
 
@@ -1466,14 +1509,14 @@ typedef struct {
     * 问题的分解
     * 问题规模的分解
 * 折半查找（递归）
-* 归并查找（递归）
+* 归并排序（递归）
 * 快速排序（递归）
 
 #### 递归与迭代
 
 * 迭代：反复利用变量旧值推出新值
 * 折半查找（迭代）
-* 归并查找（迭代）
+* 归并排序（迭代）
 
 #### 广义表
 
@@ -1691,6 +1734,8 @@ B 树、B+ 树图片
 * 三维计算机图形
 * 最邻近搜索
 
+<a id="algorithm"></a>
+
 ## ⚡️ 算法
 
 ### 排序
@@ -1743,6 +1788,8 @@ B树/B+树 |O(log<sub>2</sub>n) |   |
 [动态规划](https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)|通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法，适用于有重叠子问题和最优子结构性质的问题|[背包问题](https://github.com/huihut/interview/tree/master/Problems/KnapsackProblem)、斐波那契数列
 [贪心法](https://zh.wikipedia.org/wiki/%E8%B4%AA%E5%BF%83%E6%B3%95)|一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是最好或最优的算法|旅行推销员问题（最短路径问题）、最小生成树、哈夫曼编码
 
+<a id="problems"></a>
+
 ## ❓ Problems
 
 ### Single Problem
@@ -1771,6 +1818,8 @@ B树/B+树 |O(log<sub>2</sub>n) |   |
 ### 牛客网
 
 * [牛客网 . 在线编程专题](https://www.nowcoder.com/activity/oj)
+
+<a id="os"></a>
 
 ## 💻 操作系统
 
@@ -1809,7 +1858,7 @@ B树/B+树 |O(log<sub>2</sub>n) |   |
     * 缺点：
         1. 通信是通过将共享空间缓冲区直接附加到进程的虚拟地址空间中来实现的，因此进程间的读写操作的同步问题
         2. 利用内存缓冲区直接交换信息，内存的实体存在于计算机中，只能同一个计算机系统中的诸多进程共享，不方便网络通信
-* 套接字（Socket）：可用于不同及其间的进程通信
+* 套接字（Socket）：可用于不同计算机间的进程通信
     * 优点：
         1. 传输数据为字节级，传输数据可自定义，数据量小效率高
         2. 传输数据时间短，性能高
@@ -1878,7 +1927,7 @@ B树/B+树 |O(log<sub>2</sub>n) |   |
 
 #### 原因
 
-在现代操作系统里，同一时间可能有多个内核执行流在执行，因此内核其实象多进程多线程编程一样也需要一些同步机制来同步各执行单元对共享数据的访问。尤其是在多处理器系统上，更需要一些同步机制来同步不同处理器上的执行单元对共享的数据的访问。
+在现代操作系统里，同一时间可能有多个内核执行流在执行，因此内核其实像多进程多线程编程一样也需要一些同步机制来同步各执行单元对共享数据的访问。尤其是在多处理器系统上，更需要一些同步机制来同步不同处理器上的执行单元对共享的数据的访问。
 
 #### 同步方式
 
@@ -2004,6 +2053,8 @@ int main()
 * 最近最久未使用（LRU）算法
 * 时钟（Clock）置换算法
 
+<a id="computer-network"></a>
+
 ## ☁️ 计算机网络
 
 > 本节部分知识点来自《计算机网络（第 7 版）》
@@ -2099,7 +2150,7 @@ ICMP 报文格式：
 
 应用：
 * PING（Packet InterNet Groper，分组网间探测）测试两个主机之间的连通性
-    * TTL（Time To Live，生存时间）该字段指定 IP 包被路由器丢弃之前允许通过的最大网段数量
+* TTL（Time To Live，生存时间）该字段指定 IP 包被路由器丢弃之前允许通过的最大网段数量
 
 #### 内部网关协议
 
@@ -2409,6 +2460,8 @@ TRACE | 回显服务器收到的请求，主要用于测试或诊断
     * 用于内部网络管理员作为对所有电脑作中央管理的手段
 * SNMP（Simple Network Management Protocol，简单网络管理协议）构成了互联网工程工作小组（IETF，Internet Engineering Task Force）定义的 Internet 协议族的一部分。该协议能够支持网络管理系统，用以监测连接到网络上的设备是否有任何引起管理上关注的情况。
 
+<a id="network-programming"></a>
+
 ## 🌩 网络编程
 
 ### Socket
@@ -2473,6 +2526,8 @@ ssize_t write(int fd, const void *buf, size_t count);
 4. 接收到这个 FIN 的源发送端 TCP 对它进行确认。
 
 这样每个方向上都有一个 FIN 和 ACK。
+
+<a id="database"></a>
 
 ## 💾 数据库
 
@@ -2599,6 +2654,8 @@ ssize_t write(int fd, const void *buf, size_t count);
         * 解除：撤销处理死锁代价最小的事务，并释放此事务的所有的锁，使其他事务得以继续运行下去。
 * 可串行化调度：多个事务的并发执行是正确的，当且仅当其结果与按某一次序串行地执行这些事务时的结果相同。可串行性时并发事务正确调度的准则。
 
+<a id="design-pattern"></a>
+
 ## 📏 设计模式
 
 > 各大设计模式例子参考：[CSDN专栏 . C++ 设计模式](https://blog.csdn.net/liang19890820/article/details/66974516) 系列博文
@@ -2633,6 +2690,8 @@ ssize_t write(int fd, const void *buf, size_t count);
 * 接口隔离原则（ISP，Interface Segregation Principle）
 * 迪米特法则（LoD，Law of Demeter）
 * 开放封闭原则（OCP，Open Close Principle）
+
+<a id="link-loading-library"></a>
 
 ## ⚙️ 链接装载库
 
@@ -3185,6 +3244,8 @@ int main( void )
 * 变长参数（stdarg.h）
 * 非局部跳转（setjmp.h）
 
+<a id="books"></a>
+
 ## 📚 书籍
 
 > [huihut/CS-Books](https://github.com/huihut/CS-Books)：📚 Computer Science Books 计算机技术类书籍 PDF
@@ -3218,6 +3279,8 @@ int main( void )
 ### 其他
 
 * 《程序员的自我修养》
+
+<a id="cc-development-direction"></a>
 
 ## 🔱 C/C++ 发展方向
 
@@ -3305,6 +3368,8 @@ int main( void )
 * 较强的算法实现能力，熟练掌握 C/C++ 编程，熟悉 Shell/Python/Matlab 至少一种编程语言；
 * 在计算机视觉、模式识别等学术会议或者期刊上发表论文、相关国际比赛获奖、及有相关专利者优先。
 
+<a id="review-of-brush-questions-website"></a>
+
 ## 💯 复习刷题网站
 
 * [cplusplus](http://www.cplusplus.com/)
@@ -3313,6 +3378,8 @@ int main( void )
 * [leetcode](https://leetcode.com/) | [leetcode-cn](https://leetcode-cn.com/)
 * [lintcode](https://www.lintcode.com/)
 * [nowcoder](https://www.nowcoder.net/)
+
+<a id="interview-questions-experience"></a>
 
 ## 📝 面试题目经验
 
@@ -3335,29 +3402,36 @@ int main( void )
 * [cnblogs . 常见C++面试题及基本知识点总结（一）](https://www.cnblogs.com/LUO77/p/5771237.html)
 * [segmentfault . C++常见面试问题总结](https://segmentfault.com/a/1190000003745529)
 
+<a id="recruitment-time-post"></a>
+
 ## 📆 招聘时间岗位
 
 * [牛客网 . 2020届校招 | 2020 IT名企校招日程](https://www.nowcoder.com/school/schedule)
+
+<a id="recommend"></a>
 
 ## 👍 内推
 
 * [Github . CyC2018/Job-Recommend](https://github.com/CyC2018/Job-Recommend)：🔎 互联网内推信息（社招、校招、实习）
 * [Github . amusi/AI-Job-Recommend](https://github.com/amusi/AI-Job-Recommend)：国内公司人工智能方向（含机器学习、深度学习、计算机视觉和自然语言处理）岗位的招聘信息（含全职、实习和校招）
 
+<a id="contributor"></a>
+
 ## 👬 贡献者
 
-包括勘误的 Issue、PR，排序按照贡献时间。
+<a href="https://github.com/huihut/interview/graphs/contributors"><img src="https://opencollective.com/interview/contributors.svg?button=false" /></a>
 
-[tamarous](https://github.com/tamarous)、[i0Ek3](https://github.com/i0Ek3)、[sniper00](https://github.com/sniper00)、[blackhorse001](https://github.com/blackhorse001)、[houbaron](https://github.com/houbaron)、[Qouan](https://github.com/Qouan)、[2329408386](https://github.com/2329408386)、[FlyingfishMORE](https://github.com/FlyingfishMORE)、[Ematrix163](https://github.com/Ematrix163)、[ReturnZero23](https://github.com/ReturnZero23)、[kelvinkuo](https://github.com/kelvinkuo)、[henryace](https://github.com/henryace)、[xinghun](https://github.com/xinghun)、[maokelong](https://github.com/maokelong)、[easyYao](https://github.com/easyYao)、[FengZiYjun](https://github.com/FengZiYjun)、[shangjiaxuan](https://github.com/shangjiaxuan)、[kwongtailau](https://github.com/kwongtailau)、[asky991](https://github.com/asky991)、[traviszeng](https://github.com/traviszeng)、[kele1997](https://github.com/kele1997)、[hxdnshx](https://github.com/hxdnshx)、[a74731248](https://github.com/a74731248)、[qvjp](https://github.com/qvjp)、[xindelvcheng](https://github.com/xindelvcheng)、[hbsun2113](https://github.com/hbsun2113)、[linkwk7](https://github.com/linkwk7)、[foolishflyfox](https://github.com/foolishflyfox)、[zhjp0](https://github.com/zhjp0)、[Mrtj2016](https://github.com/Mrtj2016)
+<a id="support-sponsor"></a>
 
 ## 🍭 支持赞助
 
-打赏我一包辣条~
+**[Avalive](https://store.steampowered.com/app/1137770/Avalive/)**：一个面部捕捉的虚拟形象扮演软件。
 
-![Huihut-AliPay](https://huihut-img.oss-cn-shenzhen.aliyuncs.com/Huihut-AliPay-H370.png) ![Huihut-WeChatPay](https://huihut-img.oss-cn-shenzhen.aliyuncs.com/Huihut-WeChatPay-H370.png)
+<a id="license"></a>
 
 ## 📜 License
 
 本仓库遵循 CC BY-NC-SA 4.0（署名 - 非商业性使用 - 相同方式共享） 协议，转载请注明出处，不得用于商业目的。
 
-[![CC BY-NC-SA 4.0](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](LICENSE)
+[![CC BY-NC-SA 4.0](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](https://github.com/huihut/interview/blob/master/LICENSE)
+
